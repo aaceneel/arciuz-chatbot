@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 213 100% 65%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 213 100% 65%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 213 100% 65%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 215 23% 7%;
+    --foreground: 210 20% 98%;
+    --card: 215 22% 11%;
+    --card-foreground: 210 20% 98%;
+    --popover: 215 23% 7%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 213 100% 65%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 16% 56%;
+    --accent: 213 100% 65%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 213 100% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.typing-indicator {
+  display: inline-flex;
+  align-items: center;
+}
+
+.typing-indicator span {
+  height: 8px;
+  width: 8px;
+  margin: 0 2px;
+  background-color: #8b949e;
+  border-radius: 50%;
+  display: inline-block;
+  animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.typing-indicator span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes bounce {
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1.0);
+  }
+}
+
+.message-content p {
+  margin-bottom: 0.75rem;
+}
+
+.message-content a {
+  color: #4d9eff;
+  text-decoration: underline;
+}
+
+.message-content ul,
+.message-content ol {
+  margin-left: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.message-content ul {
+  list-style-type: disc;
+}
+
+.message-content ol {
+  list-style-type: decimal;
+}
+
+.message-content code {
+  background-color: rgba(55, 65, 81, 0.1);
+  border-radius: 0.25rem;
+  padding: 0.125rem 0.25rem;
+  font-family: monospace;
+}
+
+.message-content pre {
+  background-color: rgba(55, 65, 81, 0.1);
+  border-radius: 0.25rem;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  overflow-x: auto;
+}
+
+/* Prediction format styling */
+.prediction-summary {
+  background-color: rgba(77, 158, 255, 0.1);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.prediction-summary h3 {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.prediction-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+
+.prediction-sources {
+  background-color: rgba(55, 65, 81, 0.1);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+/* Animations and microinteractions */
+.hover-glow {
+  transition: all 0.2s ease-in-out;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 8px rgba(77, 158, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+.card-hover {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card-hover:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 12px rgba(77, 158, 255, 0.2);
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.spring-button {
+  transition: transform 0.1s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.spring-button:active {
+  transform: scale(0.95);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(90deg, #4d9eff 0%, #f0f6fc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}

@@ -1,0 +1,42 @@
+export const cryptoData = [
+  {
+    symbol: "ETH",
+    name: "Ethereum",
+    price: 3245.67,
+    change: 5.8,
+    changePercent: 2.4,
+    logo: "https://cryptologos.cc/logos/ethereum-eth-logo.png?v=025",
+  },
+  {
+    symbol: "LINK",
+    name: "Chainlink",
+    price: 14.82,
+    change: 12.3,
+    changePercent: 5.7,
+    logo: "https://cryptologos.cc/logos/chainlink-link-logo.png?v=025",
+  },
+  {
+    symbol: "AAPL",
+    name: "Apple (tokenized)",
+    price: 187.45,
+    change: 3.2,
+    changePercent: 0.8,
+    logo: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
+  },
+  {
+    symbol: "BTC",
+    name: "Bitcoin",
+    price: 52438.91,
+    change: -2.1,
+    changePercent: -1.2,
+    logo: "https://cryptologos.cc/logos/bitcoin-btc-logo.png?v=025",
+  },
+  {
+    symbol: "GLD",
+    name: "Gold (tokenized)",
+    price: 2103.5,
+    change: 4.5,
+    changePercent: 1.5,
+    logo: "https://cdn-icons-png.flaticon.com/512/2533/2533563.png",
+  },
+]
