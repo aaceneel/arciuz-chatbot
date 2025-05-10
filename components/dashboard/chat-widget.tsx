@@ -47,7 +47,7 @@ export function ChatWidget() {
           </div>
           <TabsContent value="assistant" className="mt-0">
             <div className="flex flex-col h-[500px]">
-              <div className="flex-1 overflow-y-auto pr-4">
+              <div className="flex-1 overflow-y-auto pr-4 flex flex-col justify-end">
                 {messages.length === 0 ? (
                   <div className="flex items-start gap-3 py-4">
                     <Avatar className="h-8 w-8 bg-primary/10">
