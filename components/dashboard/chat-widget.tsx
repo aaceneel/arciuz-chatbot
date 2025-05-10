@@ -46,8 +46,8 @@ export function ChatWidget() {
             </TabsList>
           </div>
           <TabsContent value="assistant" className="mt-0">
-            <div className="flex flex-col h-[500px]">
-              <div className="flex-1 overflow-y-auto pr-4 flex flex-col justify-end">
+            <div className="flex flex-col h-full min-h-[500px]">
+              <div className="flex-1 overflow-y-auto pr-4">
                 {messages.length === 0 ? (
                   <div className="flex items-start gap-3 py-4">
                     <Avatar className="h-8 w-8 bg-primary/10">
@@ -96,7 +96,6 @@ export function ChatWidget() {
                 )}
                 <div ref={messagesEndRef} />
               </div>
-
               <div className="pt-4">
                 <form onSubmit={handleSubmit} className="flex gap-2">
                   <input

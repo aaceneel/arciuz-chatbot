@@ -8,7 +8,6 @@ import { Send, Search, Mic } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { Avatar } from "@/components/ui/avatar"
-import { ScrollArea } from "@/components/ui/scroll-area"
 import { ChatMessage } from "@/components/chat-message"
 import { SuggestedQueries } from "@/components/suggested-queries"
 
@@ -51,7 +50,7 @@ export function ChatInterface() {
 
   return (
     <div className="flex flex-col h-[calc(100vh-10rem)] md:h-[calc(100vh-8rem)]">
-      <ScrollArea className="flex-1 p-4">
+      <div className="flex-1 overflow-y-auto p-4">
         <div className="max-w-3xl mx-auto">
           {messages.length === 0 && (
             <div className="flex flex-col items-center justify-center h-full py-8">
@@ -84,7 +83,7 @@ export function ChatInterface() {
 
           <div ref={messagesEndRef} />
         </div>
-      </ScrollArea>
+      </div>
 
       {showSuggestions && messages.length === 0 && <SuggestedQueries onSelectQuery={handleSuggestedQuery} />}
 
