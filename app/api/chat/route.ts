@@ -4,6 +4,11 @@ import { streamText } from "ai"
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30
 
+// Configure XAI with API key
+const xaiClient = xai({
+  apiKey: process.env.XAI_API_KEY
+})
+
 // System prompt to guide the AI's behavior
 const SYSTEM_PROMPT = `You are Arciuz, an AI-powered crypto investment assistant.
 You analyze real-time geopolitical events, historical market patterns, and public sentiment to provide users with informed crypto investment insights.
@@ -100,7 +105,7 @@ export async function POST(req: Request) {
 
   // Call the language model with the system prompt
   const result = streamText({
-    model: xai("grok-3-beta"),
+    model: xaiClient("grok-3-beta"),
     messages,
     system: SYSTEM_PROMPT,
   })
